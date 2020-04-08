@@ -1,0 +1,3 @@
+displayName = Rare Items Dealer
+author = maxabb
+version = 0.1
