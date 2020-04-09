@@ -21,6 +21,9 @@ namespace RareItemsDealer.Items {
             item.useStyle = ItemUseStyleID.HoldingOut;
             item.UseSound = SoundID.Item11;
             item.useAmmo = AmmoID.Bullet;
+
+            item.rare = 2;
+            item.value = 1000; // sells for 10 silver
         }
     }
 }
