@@ -16,7 +16,7 @@ namespace RareItemsDealer.NPCS {
 
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 25; // ammount of frames in npc
-            NPCID.Sets.ExtraFramesCount[npc.type] = 9; // ammount of additional frames TODO get details
+            NPCID.Sets.ExtraFramesCount[npc.type] = 5; // ammount of additional frames TODO get details
             NPCID.Sets.AttackFrameCount[npc.type] = 4; // ammount of frames used for attacking
             NPCID.Sets.DangerDetectRange[npc.type] = 700; // range npc looks for enemies
             NPCID.Sets.AttackType[npc.type] = 1; // 0 = throw, 1 = fire, 2 = magic
@@ -36,7 +36,7 @@ namespace RareItemsDealer.NPCS {
             npc.lifeMax = 250; // ammount of health
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
-            npc.knockBackResist = 0.5f;
+            npc.knockBackResist = 0.5f; 
             animationType = NPCID.Guide;
         }
 
@@ -95,7 +95,7 @@ namespace RareItemsDealer.NPCS {
         }
 
         public override void DrawTownAttackGun(ref float scale, ref int item, ref int closeness) {
-            scale = 0.6f;
+            scale = 0.7f;
             item = mod.ItemType("rareItemsDealerGun");
             closeness = 10;
         }
