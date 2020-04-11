@@ -1,1 +1,1 @@
-Rare Items Dealer is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Simple mod that adds an npc that sells items that are difficult to obtain in-game.
