@@ -82,6 +82,33 @@ namespace RareItemsDealer.NPCS {
             shop.item[nextSlot].SetDefaults(ItemID.SlimeStaff);
             nextSlot++;
             shop.item[nextSlot].SetDefaults(ItemID.JungleRose);
+
+            // Binoculors post EoC
+            if (NPC.downedBoss1) {
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Binoculars);
+            }
+
+            // HoneyGoggles post QueenBee
+            if (NPC.downedQueenBee) {
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.HoneyedGoggles);
+            }
+
+            // NimbusRod post WoF
+            if (Main.hardMode) {
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.NimbusRod);
+            }
+
+            // Rod of Discord & Uzi post Mech-bosses
+            if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3) {
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.RodofDiscord);
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Uzi);
+            }
+
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback) {
