@@ -126,9 +126,6 @@ namespace RareItemsDealer.NPCS {
             shop.item[nextSlot].SetDefaults(ItemID.SlimeStaff);
             nextSlot++;
 
-            // Sell Jungle Rose
-            shop.item[nextSlot].SetDefaults(ItemID.JungleRose);
-
             // post EoC
             if (NPC.downedBoss1) {
                 // Sell Binoculars
