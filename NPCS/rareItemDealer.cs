@@ -5,9 +5,9 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
 namespace RareItemsDealer.NPCS {
-    [AutoloadHead]
+    [AutoloadHead] // head will show in map
     public class rareItemDealer : ModNPC {
-        public override string Texture => "RareItemsDealer/NPCS/rareItemDealer"; // Load Default Texture
+        public override string Texture => "RareItemsDealer/NPCS/rareItemDealer"; // Texture to load
 
         public override bool Autoload(ref string name) {
             name = "Rare Items Dealer"; // npc name
@@ -41,6 +41,7 @@ namespace RareItemsDealer.NPCS {
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money) {
+            // NPC will only be able to spawn if King Slime has been defeated
             if (NPC.downedSlimeKing) {
                 return true;
             }
@@ -48,63 +49,82 @@ namespace RareItemsDealer.NPCS {
         }
 
         public override string TownNPCName() {
-            return "qwertyuiop";
+            return "qwertyuiop"; // possible names for npc
         }
 
         public override void NPCLoot() {
-            Item.NewItem(npc.getRect(), mod.ItemType("rareItemsDealerGun"));
+            Item.NewItem(npc.getRect(), mod.ItemType("rareItemsDealerGun")); // will drop this on death
         }
 
         public override string GetChat() {
-            switch(Main.rand.Next(2)) {
-                case 0:
-                    return "Don't ask where I got these.";
-                default: {
-                    return "Oh you're from Columbia? I stayed at a prison there once.";
+            switch(Main.rand.Next(2)) { // get a random value from 0-1
+                case 0: // if it is 0
+                    return "Don't ask where I got these."; // say this
+                default: { // if it isnt any of the above cases
+                    return "Oh you're from Columbia? I stayed at a prison there once."; // say this
                 }
             }
         }
 
         public override void SetChatButtons(ref string button, ref string button2) {
             button = Language.GetTextValue("LegacyInterface.28"); // shop button
-            button2 = "Give Life Advice"; //This is how you make custom buttons you can give them funciton in OnChatButtonClicked()
+            button2 = "Give Life Advice"; // This is how you make custom buttons you can give them funciton in OnChatButtonClicked()
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref bool shop) {
             if(firstButton) {
+                // If user clicks the shop button it will open the shop
                 shop = true;
             } else {
+                // Life Advice
                 Main.npcChatText = "If you ever find yourself in the middle of a Columbian maximum security prison, don't trust Steve. You'll find yourself in the shower surrounded by Micky Mouse cosplayers, covered in blood and coughing up cement.";
             }
         }
 
         public override void SetupShop(Chest shop, ref int nextSlot) {
+            // Sell Slime Staff
             shop.item[nextSlot].SetDefaults(ItemID.SlimeStaff);
             nextSlot++;
+
+            // Sell Jungle Rose
             shop.item[nextSlot].SetDefaults(ItemID.JungleRose);
 
-            // Binoculors post EoC
+            // post EoC
             if (NPC.downedBoss1) {
+                // Sell Binoculars
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.Binoculars);
             }
 
-            // HoneyGoggles post QueenBee
+            // post QueenBee
             if (NPC.downedQueenBee) {
+                // Sell Honeyed Goggles
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.HoneyedGoggles);
+                
+                // Sell Jungle Rose
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.JungleRose);
+
+                // Sell Natures Gift
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.NaturesGift);
             }
 
-            // NimbusRod post WoF
+            // post WoF
             if (Main.hardMode) {
+                // Sell Nimbus Rod
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.NimbusRod);
             }
 
-            // Rod of Discord & Uzi post Mech-bosses
+            // post Mech-bosses
             if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3) {
+                // Sell Rod of Discord
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.RodofDiscord);
+
+                // Sell Uzi
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.Uzi);
             }
@@ -112,29 +132,29 @@ namespace RareItemsDealer.NPCS {
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback) {
-            damage = 25;
-            knockback = 4f;
+            damage = 25; // base damage
+            knockback = 4f; // knockBack
         }
 
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown) {
-            cooldown = 10;
-            randExtraCooldown = 10;
+            cooldown = 10; // cooldown after each attack
+            randExtraCooldown = 10; // a random value from 0-10 will be added to cooldown
         }
 
         public override void DrawTownAttackGun(ref float scale, ref int item, ref int closeness) {
-            scale = 0.7f;
-            item = mod.ItemType("rareItemsDealerGun");
-            closeness = 10;
+            scale = 0.7f; // item is only 70% of normal size
+            item = mod.ItemType("rareItemsDealerGun"); // Will hold the Glock
+            closeness = 10; // how close the item is to the NPCS body
         }
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay) {
-            projType = ProjectileID.Bullet;
-            attackDelay = 1;
+            projType = ProjectileID.Bullet; // shoots regular bullets
+            attackDelay = 1; // slight delay per shot
         }
 
         public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)//Allows you to determine the speed at which this town NPC throws a projectile when it attacks. Multiplier is the speed of the projectile, gravityCorrection is how much extra the projectile gets thrown upwards, and randomOffset allows you to randomize the projectile's velocity in a square centered around the original velocity
 		{
-			multiplier = 7f;
+			multiplier = 7f; // bullet velocity 7x greater
 		}
     }
 }
