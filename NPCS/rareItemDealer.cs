@@ -129,6 +129,10 @@ namespace RareItemsDealer.NPCS {
             // Sell Hermes Boots
             shop.item[nextSlot].SetDefaults(ItemID.HermesBoots);
 
+            // Sell Pink Gel
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(ItemID.PinkGel);
+
             // post EoC
             if (NPC.downedBoss1) {
                 // Sell Binoculars
@@ -149,6 +153,12 @@ namespace RareItemsDealer.NPCS {
                 // Sell Natures Gift
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.NaturesGift);
+            }
+
+            // post Skeletron
+            if (NPC.downedBoss3) {
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.LuckyHorseshoe);
             }
 
             // post WoF
