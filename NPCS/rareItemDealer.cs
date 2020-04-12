@@ -183,6 +183,21 @@ namespace RareItemsDealer.NPCS {
                 shop.item[nextSlot].SetDefaults(ItemID.Uzi);
             }
 
+            // post plantera
+            if (NPC.downedPlantBoss) {
+                // Sell Biome Keys
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.CrimsonKey);
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.CorruptionKey);
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.FrozenKey);
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.HallowedKey);
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.JungleKey);
+            }
+
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback) {
