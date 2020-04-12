@@ -166,6 +166,10 @@ namespace RareItemsDealer.NPCS {
                 // Sell Nimbus Rod
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.NimbusRod);
+
+                // Sell Angel Wings
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.AngelWings);
             }
 
             // post Mech-bosses
