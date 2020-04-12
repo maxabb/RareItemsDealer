@@ -126,6 +126,9 @@ namespace RareItemsDealer.NPCS {
             shop.item[nextSlot].SetDefaults(ItemID.SlimeStaff);
             nextSlot++;
 
+            // Sell Hermes Boots
+            shop.item[nextSlot].SetDefaults(ItemID.HermesBoots);
+
             // post EoC
             if (NPC.downedBoss1) {
                 // Sell Binoculars
