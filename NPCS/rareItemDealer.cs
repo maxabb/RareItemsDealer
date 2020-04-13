@@ -188,14 +188,19 @@ namespace RareItemsDealer.NPCS {
                 // Sell Biome Keys
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.CrimsonKey);
+                shop.item[nextSlot].shopCustomPrice = 2000000;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.CorruptionKey);
+                shop.item[nextSlot].shopCustomPrice = 2000000;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.FrozenKey);
+                shop.item[nextSlot].shopCustomPrice = 2000000;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.HallowedKey);
+                shop.item[nextSlot].shopCustomPrice = 2000000;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.JungleKey);
+                shop.item[nextSlot].shopCustomPrice = 2000000;
             }
 
         }
