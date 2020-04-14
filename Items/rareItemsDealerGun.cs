@@ -6,7 +6,7 @@ namespace RareItemsDealer.Items {
     public class rareItemsDealerGun : ModItem {
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Glock");
-            Tooltip.SetDefault("Rare Item Dealers Gun");
+            Tooltip.SetDefault("The pistol used by the Rare Items Dealer.");
         }
 
         public override void SetDefaults() {
