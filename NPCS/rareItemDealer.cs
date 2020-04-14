@@ -93,13 +93,13 @@ namespace RareItemsDealer.NPCS {
                 case 1:
                     return "If you ever find yourself in the middle of a Columbian maximum security prison, don't trust Steve. You'll find yourself in the shower surrounded by Micky Mouse cosplayers, covered in blood and coughing up cement.";
                 case 2:
-                    return "No, I don't sell vapes. Stop asking that";
+                    return "No, I don't sell vapes. Stop asking that.";
                 case 3:
-                    return "Thanks for letting me move in here. I'm pretty sure I'm wanted in every other country";
+                    return "Thanks for letting me move in here. I'm pretty sure I'm wanted in every other country.";
                 case 4:
-                    return "I'd be selling other stuff as well, but this game's only PG-13";
+                    return "I'd be selling other stuff as well, but this game's only PG-13.";
                 case 5:
-                    return "I also have a website, but you have to be pretty tech savvy to get there";
+                    return "I also have a website, but you have to be pretty tech savvy to get there.";
                 default: { // if it isnt any of the above cases
                     return "Oh you're from Columbia? I stayed at a prison there once."; // say this
                 }
