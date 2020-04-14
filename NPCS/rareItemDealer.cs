@@ -108,16 +108,12 @@ namespace RareItemsDealer.NPCS {
 
         public override void SetChatButtons(ref string button, ref string button2) {
             button = Language.GetTextValue("LegacyInterface.28"); // shop button
-            button2 = "Give Life Advice"; // This is how you make custom buttons you can give them funciton in OnChatButtonClicked()
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref bool shop) {
             if(firstButton) {
                 // If user clicks the shop button it will open the shop
                 shop = true;
-            } else {
-                // Life Advice
-                Main.npcChatText = "If you ever find yourself in the middle of a Columbian maximum security prison, don't trust Steve. You'll find yourself in the shower surrounded by Micky Mouse cosplayers, covered in blood and coughing up cement.";
             }
         }
 
