@@ -1,3 +1,4 @@
 displayName = Rare Items Dealer
 author = maxabb
-version = 0.1
+version = 0.22
+homepage = https://github.com/maxabb/RareItemsDealer
