@@ -10,7 +10,7 @@ namespace RareItemsDealer.NPCS {
         public override string Texture => "RareItemsDealer/NPCS/rareItemDealer"; // Texture to load
 
         public override bool Autoload(ref string name) {
-            name = "Rare Items Dealer"; // npc name
+            name = "RareItemsDealer"; // npc name
             return mod.Properties.Autoload;
         }
 
